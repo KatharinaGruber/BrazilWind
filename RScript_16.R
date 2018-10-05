@@ -12,6 +12,7 @@
 # interpolation methods: NN, BLI, IDW; wind speed correction methods: "","r","m","rm","no"
 
 # to use, enter paths in the beginning and store data accordingly
+# and below username and password for download server, get at: https://urs.earthdata.nasa.gov/home
 
 
 
@@ -74,7 +75,9 @@ library(fitdistrplus)
 
 
 ##### MERRA DOWNLOAD ####
-
+# add username and password for 
+username = "..."
+password = "..."
 
 
 #the boundary of the box to download (Brazil)#
@@ -88,28 +91,28 @@ date_seq<-seq(as.POSIXct("1980-01-01",tz="UTC"),as.POSIXct("2017-08-31",tz="UTC"
 # download all needed MERRA variables
 getMERRADataBox(lon1,lat1,lon2,lat2,
                 date_seq,c("U10M"),
-                "RE_EXTREME",
-                "Re_extreme666!",
+                username,
+                password,
                 TRUE)
 getMERRADataBox(lon1,lat1,lon2,lat2,
                 date_seq,c("U50M"),
-                "RE_EXTREME",
-                "Re_extreme666!",
+                username,
+                password,
                 TRUE)
 getMERRADataBox(lon1,lat1,lon2,lat2,
                 date_seq,c("V10M"),
-                "RE_EXTREME",
-                "Re_extreme666!",
+                username,
+                password,
                 TRUE)
 getMERRADataBox(lon1,lat1,lon2,lat2,
                 date_seq,c("V50M"),
-                "RE_EXTREME",
-                "Re_extreme666!",
+                username,
+                password,
                 TRUE)
 getMERRADataBox(lon1,lat1,lon2,lat2,
                 date_seq,c("DISPH"),
-                "RE_EXTREME",
-                "Re_extreme666!",
+                username,
+                password,
                 TRUE)
 
 # split time list for conversion into Feathr Format
