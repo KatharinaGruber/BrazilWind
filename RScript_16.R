@@ -550,7 +550,6 @@ powlist <- list()
 for(i in c(1:length(capacities[,1]))){
   statn <- i
   powsim <- calcpoweroutput(lon=capacities$long[i],lat=capacities$lat[i],capacities=data.frame(date.start,capacities$cap[i]),usecfIN,usecfSTATE,state=capacities$state[i],intmethod,INcormethod)
-  #if((length(powlist)<capind[i])|(length(powlist[[capind[i]]])<1)){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   if(length(powlist)<capind[i]){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   rm(powsim)}
 names(powlist) <- capstates$values
@@ -763,7 +762,6 @@ powlist <- list()
 for(i in c(1:length(capacities[,1]))){
   statn <- i
   powsim <- calcpoweroutput(lon=capacities$long[i],lat=capacities$lat[i],capacities=data.frame(date.start,capacities$cap[i]),usecfIN,usecfSTATE,state=capacities$state[i],intmethod,INcormethod)
-  #if((length(powlist)<capind[i])|(length(powlist[[capind[i]]])<1)){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   if(length(powlist)<capind[i]){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   rm(powsim)}
 names(powlist) <- capstates$values
@@ -814,7 +812,6 @@ powlist <- list()
 for(i in c(1:length(capacities[,1]))){
   statn <- i
   powsim <- calcpoweroutput(lon=capacities$long[i],lat=capacities$lat[i],capacities=data.frame(date.start,capacities$cap[i]),usecfIN,usecfSTATE,state=capacities$state[i],intmethod,INcormethod)
-  #if((length(powlist)<capind[i])|(length(powlist[[capind[i]]])<1)){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   if(length(powlist)<capind[i]){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   rm(powsim)}
 names(powlist) <- capstates$values
@@ -865,7 +862,6 @@ powlist <- list()
 for(i in c(1:length(capacities[,1]))){
   statn <- i
   powsim <- calcpoweroutput(lon=capacities$long[i],lat=capacities$lat[i],capacities=data.frame(date.start,capacities$cap[i]),usecfIN,usecfSTATE,state=capacities$state[i],intmethod,INcormethod)
-  #if((length(powlist)<capind[i])|(length(powlist[[capind[i]]])<1)){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   if(length(powlist)<capind[i]){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   rm(powsim)}
 names(powlist) <- capstates$values
@@ -917,7 +913,6 @@ powlist <- list()
 for(i in c(1:length(capacities[,1]))){
   statn <- i
   powsim <- calcpoweroutput(lon=capacities$long[i],lat=capacities$lat[i],capacities=data.frame(date.start,capacities$cap[i]),usecfIN,usecfSTATE,state=capacities$state[i],intmethod,INcormethod)
-  #if((length(powlist)<capind[i])|(length(powlist[[capind[i]]])<1)){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   if(length(powlist)<capind[i]){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   rm(powsim)}
 names(powlist) <- capstates$values
@@ -978,7 +973,6 @@ powlist <- list()
 for(i in c(1:length(capacities[,1]))){
   statn <- i
   powsim <- calcpoweroutput(lon=capacities$long[i],lat=capacities$lat[i],capacities=data.frame(date.start,capacities$cap[i]),usecfIN,usecfSTATE,state=capacities$state[i],intmethod,INcormethod)
-  #if((length(powlist)<capind[i])|(length(powlist[[capind[i]]])<1)){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   if(length(powlist)<capind[i]){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   rm(powsim)}
 names(powlist) <- capstates$values
@@ -1035,7 +1029,6 @@ powlist <- list()
 for(i in c(1:length(capacities[,1]))){
   statn <- i
   powsim <- calcpoweroutput(lon=capacities$long[i],lat=capacities$lat[i],capacities=data.frame(date.start,capacities$cap[i]),usecfIN,usecfSTATE,state=capacities$state[i],intmethod,INcormethod)
-  #if((length(powlist)<capind[i])|(length(powlist[[capind[i]]])<1)){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   if(length(powlist)<capind[i]){powlist[[capind[i]]] <- powsim}else{powlist[[capind[i]]][,2] <- powlist[[capind[i]]][,2]+powsim[,2]}
   rm(powsim)}
 names(powlist) <- capstates$values
