@@ -1,3 +1,6 @@
+#### This script contains functions for downloading, preparing and using MERRA reanalysis data
+#### adapted from: https://github.com/joph/RE_EXTREME/blob/master/scripts/MERRA_data.R
+
 ####function to download data from the merra2 dataset
 ####lon / lat: center of box to download from. data are downloaded from box lon-0.5,lat-0.625,lon+0.5,lat+0.625
 ####period: period of interest
