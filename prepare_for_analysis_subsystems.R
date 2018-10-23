@@ -140,9 +140,6 @@ for(i in c(2:16)){
 }
 
 
-# save prepared monthly data frames
-save(Smonthlycomp,Smonthlycompc,NEmonthlycomp,NEmonthlycompc,BRASILmonthlycomp,BRASILmonthlycompc,file="comp_subsbra_monthly.RData")
-
 
 # load observed wind power generation from ONS
 # function getprodSUBBRA is found in functions_analysis.R
@@ -179,3 +176,38 @@ setwd(dirresults)
 save(Sdailycomp,Sdailycompc,Sdailyprod,NEdailycomp,NEdailycompc,NEdailyprod,BRASILdailycomp,BRASILdailycompc,BRASILdailyprod,file="comp_subsbra_daily.RData")
 
 
+
+
+
+# load observed wind power generation from ONS
+# function getprodSUBBRA is found in functions_analysis.R
+NEmonthlyprod <- getprodSUBBRA("NE","m")
+Smonthlyprod <- getprodSUBBRA("S","m")
+BRASILmonthlyprod <- getprodSUBBRA("BRASIL","m")
+NEmonthlycomp[,1] <- as.numeric(as.vector(NEmonthlycomp[,1]))
+NEmonthlycompc[,1] <- as.numeric(as.vector(NEmonthlycompc[,1]))
+Smonthlycomp[,1] <- as.numeric(as.vector(Smonthlycomp[,1]))
+Smonthlycompc[,1] <- as.numeric(as.vector(Smonthlycompc[,1]))
+BRASILmonthlycomp[,1] <- as.numeric(as.vector(BRASILmonthlycomp[,1]))
+BRASILmonthlycompc[,1] <- as.numeric(as.vector(BRASILmonthlycompc[,1]))
+# find overlapping time series
+cut1s <- max(Smonthlyprod[1,1],Smonthlycomp[1,1])
+cut2s <- min(Smonthlyprod[dim(Smonthlyprod)[1],1],Smonthlycomp[dim(Smonthlycomp)[1],1])
+cut1n <- max(NEmonthlyprod[1,1],NEmonthlycomp[1,1])
+cut2n <- min(NEmonthlyprod[dim(NEmonthlyprod)[1],1],NEmonthlycomp[dim(NEmonthlycomp)[1],1])
+cut1b <- max(BRASILmonthlyprod[1,1],BRASILmonthlycomp[1,1])
+cut2b <- min(BRASILmonthlyprod[dim(BRASILmonthlyprod)[1],1],BRASILmonthlycomp[dim(BRASILmonthlycomp)[1],1])
+# cut to same length as comparison data
+Smonthlycomp <- Smonthlycomp[which(Smonthlycomp[,1]==cut1s):which(Smonthlycomp[,1]==cut2s),]
+Smonthlycompc <- Smonthlycompc[which(Smonthlycompc[,1]==cut1s):which(Smonthlycompc[,1]==cut2s),]
+Smonthlyprod <- Smonthlyprod[which(Smonthlyprod[,1]==cut1s):which(Smonthlyprod[,1]==cut2s),]
+NEmonthlycomp <- NEmonthlycomp[which(NEmonthlycomp[,1]==cut1n):which(NEmonthlycomp[,1]==cut2n),]
+NEmonthlycompc <- NEmonthlycompc[which(NEmonthlycompc[,1]==cut1n):which(NEmonthlycompc[,1]==cut2n),]
+NEmonthlyprod <- NEmonthlyprod[which(NEmonthlyprod[,1]==cut1n):which(NEmonthlyprod[,1]==cut2n),]
+BRASILmonthlycomp <- BRASILmonthlycomp[which(BRASILmonthlycomp[,1]==cut1b):which(BRASILmonthlycomp[,1]==cut2b),]
+BRASILmonthlycompc <- BRASILmonthlycompc[which(BRASILmonthlycompc[,1]==cut1b):which(BRASILmonthlycompc[,1]==cut2b),]
+BRASILmonthlyprod <- BRASILmonthlyprod[which(BRASILmonthlyprod[,1]==cut1b):which(BRASILmonthlyprod[,1]==cut2b),]
+
+# save prepared monthly data frames
+setwd(dirresults)
+save(Smonthlycomp,Smonthlycompc,Smonthlyprod,NEmonthlycomp,NEmonthlycompc,NEmonthlyprod,BRASILmonthlycomp,BRASILmonthlycompc,BRASILmonthlyprod,file="comp_subsbra_monthly.RData")
