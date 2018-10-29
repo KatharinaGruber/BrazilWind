@@ -19,7 +19,7 @@ dirwindprodsubbra = "C:/..."
 source("C:/.../functions_analysis.R")
 
 
-# load data and save to differently names data frames
+# load data and save to differently named data frames
 # NN, BLI, IDW: interpolations (Nearest Neighbour, Bilinear Interpolation, Inverse Distance Weighting)
 # r, m, rm, noINc: wind speed correction methods (basic method: hourly and monthly wind speed correction, r... removal of long
 # rows of 0 m/s wind speed, m... mean approximation, rm... combination of both, noINc... without wind speed correction)
