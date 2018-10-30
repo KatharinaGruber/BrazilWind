@@ -17,7 +17,9 @@ library(dplyr)
 library(tibble)
 library(ggplot2)
 
+# directory, where results of wind power simulation are stored
 dirresults = "C:/..."
+# directory where El Nino and La Nina indices are stored
 dirnino = "C:/..."
 
 source("C:/.../functions_LM.R")
